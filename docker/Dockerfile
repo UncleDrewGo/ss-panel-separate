@@ -6,11 +6,11 @@
 
 FROM ubuntu:14.04 
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # make sure the package repository is up to date
 RUN apt-get -y update && apt-get install -y redis-server
-RUN echo "mysql-server-5.6 mysql-server/root_password password pw123456" | sudo debconf-set-selections
-RUN echo "mysql-server-5.6 mysql-server/root_password_again password pw123456" | sudo debconf-set-selections
-RUN apt-get -y install mysql-server-5.6
+
 RUN apt-get -y install git curl php5 php-guzzle php5-mysql nginx php5-fpm
 RUN apt-get install -y python-pip python-m2crypto
 RUN pip install cymysql
@@ -29,13 +29,11 @@ ADD config.json /opt/shadowsocks/shadowsocks/config.json
 ADD shadowsocks.conf /etc/supervisor/conf.d/shadowsocks.conf
 ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 ADD 3line.sh /opt/3line.sh
-ADD mysql-init.sh /opt/mysql-init.sh
 ADD .env /opt/ss-panel/.env
 ADD default /etc/nginx/sites-available/default
 
 RUN /bin/bash /opt/3line.sh
-RUN service mysql start
-RUN /bin/bash /opt/mysql-init.sh
+
 
 RUN apt-get clean && apt-get autoclean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -46,4 +44,4 @@ CMD ["/usr/bin/supervisord"]
 
 
 # contact
-MAINTAINER SimonXu, maxidea@gmail.com
+MAINTAINER UncleDrew, uncledrewgo@gmail.com
