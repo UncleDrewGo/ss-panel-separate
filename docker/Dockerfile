@@ -18,7 +18,7 @@ RUN cd /opt; git clone -b manyuser https://github.com/mengskysama/shadowsocks.gi
 RUN rm -f /opt/shadowsocks/shadowsocks/Config.py
 RUN rm -f /opt/shadowsocks/shadowsocks/config.json
 RUN apt-get -y install supervisor
-RUN cd /opt; git clone https://github.com/UncleDrewGo/ss-panel-separate.git
+RUN cd /opt; git clone https://github.com/maxidea-com/ss-panel.git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer
 RUN cd /opt/ss-panel/; composer install
 RUN chmod -R 777 /opt/ss-panel/storage
