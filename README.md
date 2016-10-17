@@ -14,11 +14,12 @@ this project is separated from [maxidea](https://github.com/maxidea-com/ss-panel
 
 
 
-## About
+## usage
+具体操作请移步wiki
+
+##原项目连接
 
 [完整版中文安装教程](https://github.com/maxidea-com/ss-panel/wiki/v3-Guide)
-
-## Quick Start
 
 [专为懒人准备的Docker版本](https://github.com/maxidea-com/ss-panel/wiki/Docker)
 
