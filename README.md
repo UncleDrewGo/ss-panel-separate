@@ -1,6 +1,8 @@
 # ss-panel
-
-Thanks: 
+##desc:
+this project is separated from [maxidea](https://github.com/maxidea-com/ss-panel),one is ss-panel,the other part is mysql.
+###Thanks: 
+[maxidea](https://github.com/maxidea-com/ss-panel)
 
 [LightFish](https://github.com/OzCat/LightFish)
 
